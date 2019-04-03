@@ -1,7 +1,7 @@
 import { CommonModule }                       from '@angular/common';
 import { ModuleWithProviders, NgModule }      from '@angular/core';
 import { MatButtonModule, MatIconModule }     from '@angular/material';
-import { NgxuxDatatableModule }               from '../../../ngxux-datatable/src/lib/ngxux-datatable.module';
+import { NgxuxDatatableModule }               from '@ngxux/datatable';
 import { NgxuxFileManagementConfig }          from './ngxux-file-management-config';
 import { NgxuxFileManagementConfigService }   from './ngxux-file-management-config-service';
 import { NgxuxFileManagementTableComponent }  from './ngxux-file-management-table/ngxux-file-management-table.component';
