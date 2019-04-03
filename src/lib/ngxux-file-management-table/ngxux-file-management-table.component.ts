@@ -15,4 +15,9 @@ export class NgxuxFileManagementTableComponent implements OnInit {
 
     }
 
+    public onButtonClick(): void {
+
+
+    }
+    
 }
