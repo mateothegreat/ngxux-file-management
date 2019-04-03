@@ -3,7 +3,6 @@ import { ModuleWithProviders, NgModule }                      from '@angular/cor
 import { MatButtonModule, MatIconModule }                     from '@angular/material';
 import { NgxuxCameraCaptureConfig, NgxuxCameraCaptureModule } from '@ngxux/camera-capture';
 import { NgxuxDatatableModule }                               from '@ngxux/datatable';
-import { environment }                                        from '../../../../src/environments/environment';
 import { NgxuxFileManagementConfig }                          from './ngxux-file-management-config';
 import { NgxuxFileManagementConfigService }                   from './ngxux-file-management-config-service';
 import { NgxuxFileManagementTableComponent }                  from './ngxux-file-management-table/ngxux-file-management-table.component';
@@ -30,11 +29,10 @@ import { NgxuxFileManagementService }                         from './ngxux-file
 
         NgxuxCameraCaptureModule.forRoot(new NgxuxCameraCaptureConfig({
 
-            API_BASE: environment.API_BASE,
+            API_BASE: 'environment.API_BASE',
             ROUTE: 'settings/users'
 
         })),
-
 
     ],
 
