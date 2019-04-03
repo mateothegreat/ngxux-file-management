@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'ngxux-file-management',
@@ -7,14 +7,8 @@ import { Component, OnInit } from '@angular/core';
             ngxux-file-management works!
         </p>
     `,
-    styles: []
+    styleUrls: [ './ngxux-file-management.component.scss' ]
 })
-export class NgxuxFileManagementComponent implements OnInit {
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
+export class NgxuxFileManagementComponent {
 
 }

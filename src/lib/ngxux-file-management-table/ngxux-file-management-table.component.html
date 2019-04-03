@@ -1,0 +1,46 @@
+<div class="wrapper">
+
+    <div class="top">
+
+        <div class="left">
+
+            Tasks
+
+        </div>
+
+        <div class="right">
+
+            <button (click)="onButtonClick()"
+                    color="primary"
+                    mat-raised-button>
+
+                Upload..
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <ngxux-datatable #datatable [columns]="[{
+
+        name: 'Name'
+
+    }, {
+
+        name: 'Type'
+
+    }, {
+
+        name: 'Date Uploaded',
+        cellTemplate: stampCreated
+
+    }]"></ngxux-datatable>
+
+    <ng-template #stampCreated let-column="column" let-row="row" let-value="value">
+
+        {{ row.stampCreated | date: 'medium' }}
+
+    </ng-template>
+
+</div>
