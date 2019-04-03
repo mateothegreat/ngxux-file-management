@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Pageable }                            from '@ngxux/common';
-import { NgxuxDatatableComponent }             from '../../../../ngxux-datatable/src/lib/ngxux-datatable.component';
+import { NgxuxDatatableComponent }             from '@ngxux/datatable';
 import { NgxuxFile }                           from '../ngxux-file';
 import { NgxuxFileManagementService }          from '../ngxux-file-management.service';
 
