@@ -4,15 +4,29 @@
 
         <div class="left">
 
-            Tasks
+            Attachments ({{ files ? files?.content.length : '--' }})
 
         </div>
 
         <div class="right">
 
-            <button (click)="onButtonClick()"
+            <button (click)="onCameraClick()"
+                    *ngIf="showCameraButton"
                     color="primary"
                     mat-raised-button>
+
+                <mat-icon>add_a_photo</mat-icon>
+
+                Take Picture..
+
+            </button>
+
+            <button (click)="onUploadClick()"
+                    *ngIf="showUploadButton"
+                    color="primary"
+                    mat-raised-button>
+
+                <mat-icon>cloud_upload</mat-icon>
 
                 Upload..
 
@@ -22,7 +36,7 @@
 
     </div>
 
-    <ngxux-datatable #datatable [columns]="[{
+    <ngxux-datatable [columns]="[{
 
         name: 'Name'
 

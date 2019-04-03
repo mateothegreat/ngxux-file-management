@@ -9,5 +9,5 @@ export class NgxuxFile {
     public bytes: number;
     public belongsToType: string;
     public belongsToUuid: string;
-    
+
 }

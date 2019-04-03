@@ -12,6 +12,8 @@ import { NgxuxFileManagementService }          from '../ngxux-file-management.se
 export class NgxuxFileManagementTableComponent implements OnInit {
 
     @Input() public files: Pageable<NgxuxFile>;
+    @Input() public showCameraButton: boolean;
+    @Input() public showUploadButton: boolean;
 
     @ViewChild(NgxuxDatatableComponent) private datatableRef: NgxuxDatatableComponent<NgxuxFile>;
 
@@ -39,7 +41,12 @@ export class NgxuxFileManagementTableComponent implements OnInit {
 
     }
 
-    public onButtonClick(): void {
+    public onCameraClick(): void {
+
+
+    }
+
+    public onUploadClick(): void {
 
 
     }

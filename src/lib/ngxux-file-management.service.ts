@@ -10,6 +10,8 @@ export class NgxuxFileManagementService {
 
     public files$: ReplaySubject<Pageable<NgxuxFile>> = new ReplaySubject(1);
 
+    public files: Pageable<NgxuxFile>;
+
     public constructor() {
 
     }
@@ -17,6 +19,8 @@ export class NgxuxFileManagementService {
     public setFiles(files: Pageable<NgxuxFile>): Observable<Pageable<NgxuxFile>> {
 
         this.files$.next(files);
+
+        this.files = files;
 
         return this.files$;
 
