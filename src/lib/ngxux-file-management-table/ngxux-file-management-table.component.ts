@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Pageable }                            from '@ngxux/common';
+import { NgxuxDatatableComponent }             from '../../../../ngxux-datatable/src/lib/ngxux-datatable.component';
+import { NgxuxFile }                           from '../ngxux-file';
+import { NgxuxFileManagementService }          from '../ngxux-file-management.service';
 
 @Component({
     selector: 'ngxux-file-management-table',
@@ -7,11 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgxuxFileManagementTableComponent implements OnInit {
 
-    public constructor() {
+    @Input() public files: Pageable<NgxuxFile>;
+
+    @ViewChild(NgxuxDatatableComponent) private datatableRef: NgxuxDatatableComponent<NgxuxFile>;
+
+    public constructor(private ngxuxFileManagementService: NgxuxFileManagementService) {
 
     }
 
     public ngOnInit() {
+
+        this.ngxuxFileManagementService.files$.subscribe((pageable: Pageable<NgxuxFile>) => {
+
+            this.datatableRef.setPage(pageable);
+
+        });
+
+        this.datatableRef.clicks$.subscribe((file: NgxuxFile) => {
+
+            if (file.uuid) {
+
+                console.log(file);
+
+            }
+
+        });
 
     }
 
@@ -19,5 +43,5 @@ export class NgxuxFileManagementTableComponent implements OnInit {
 
 
     }
-    
+
 }
